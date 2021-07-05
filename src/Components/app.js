@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.cards = [
+        this.state={
+            flashcardArr: []
+        };
+    }
 
-        ];
-        this.state = {
-            cardNumber: 0
-        }
+    componentDidMount(){
+        this.getAllFlashcards();
     }
     render() {
         return (
