@@ -1,0 +1,7 @@
+.footer {
+    background-color: lightblue;
+    width: 100%;
+    box-shadow: 0 50vh 0 50vh lightblue;
+    text-align: center;
+    margin-top: 2em;
+}
