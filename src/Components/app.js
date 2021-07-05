@@ -1,6 +1,9 @@
 import { assertExpressionStatement } from '@babel/types';
 import React, { Component } from 'react';
 import NavBar from './NavigationBar/navigationbar';
+import Flashcards from './Flashcards/flashcards';
+import Footer from './Footer/footer';
+
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +27,8 @@ class App extends Component {
         return (
             <div className="container-fluid">
                 <NavBar />
-
+                <Flashcards />
+                <Footer />
             </div>
         );
     }
