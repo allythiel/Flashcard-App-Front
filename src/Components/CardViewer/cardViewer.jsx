@@ -1,5 +1,5 @@
 import React from 'react';
-import Flashcards from '../Flashcards/flashcards';
+import Flashcard from '../Flashcards/flashcards';
 
 function CardViewer(props){
     return(
@@ -8,10 +8,13 @@ function CardViewer(props){
             <button onClick={() => props.previousCard()}>Previous Flashcard</button>
         </div>
         <div className="col-md-4">
-            <Flashcards flashcard={props.flashcard}/>
+            <Flashcard flashcard={props.flashcard}/>
         </div>
         <div className="col-md-4">
             <button onClick={() => props.nextCard()}>Next Flashcard</button>
+        </div>
+        <div ClassName="col-md-4">
+            <button onClick={() => props.flipCard()}>Flip Flashcard</button>
         </div>
     </div>
     )

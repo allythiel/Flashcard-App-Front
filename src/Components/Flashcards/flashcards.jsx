@@ -1,15 +1,15 @@
 import React from 'react';
 import './flashcards.css';
 
-function Flashcards(props){
+function Flashcard(props){
     return (
-        <div className="flashcards">
+        <div className="flashcardfront">
             <div className="card">
                 <h1 className="term">{props.flashcard.term}</h1>
-                <h4 className="description">{props.flashcard.description}</h4>
+                <h1 className="description">{props.flashcard.description}</h1>
             </div>
         </div>
     );
 }
 
-export default Flashcards;
+export default Flashcard;

@@ -3,6 +3,7 @@ import TitleBar from './TitleBar/titlebar';
 import Footer from './Footer/footer';
 import CardViewer from './CardViewer/cardViewer';
 import CardCreator from './cardCreator/cardCreator';
+import './app.css';
 
 
 class App extends Component {
