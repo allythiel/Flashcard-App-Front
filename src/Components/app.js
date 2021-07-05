@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TitleBar from './TitleBar/titlebar';
 import Footer from './Footer/footer';
 import CardViewer from './CardViewer/cardViewer';
+import CardCreator from './cardCreator/cardCreator';
 
 
 class App extends Component {
@@ -55,6 +56,7 @@ class App extends Component {
             <div className="container-fluid">
                 <TitleBar />
                 <CardViewer flashcard={this.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
+                <CardCreator addNewCard={this.addNewCard.bind(this)}/>
                 <Footer />
             </div>
         );
