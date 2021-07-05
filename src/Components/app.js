@@ -7,7 +7,9 @@ import CardViewer from './CardViewer/cardViewer';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.flashcards = [];
+        this.flashcards = [
+            {term: 'Javascript', description: 'A front end software language'},
+        ];
         this.state = {
             cardNumber: 0
         }

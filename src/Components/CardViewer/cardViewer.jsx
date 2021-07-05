@@ -1,5 +1,5 @@
 import React from 'react';
-import Flashcards from './'
+import Flashcards from '../Flashcards/flashcards';
 
 function CardViewer(props){
     return(
