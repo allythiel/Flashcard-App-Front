@@ -27,7 +27,7 @@ class CardCreator extends Component {
         this.props.addNewCard(flashcard);
         this.setState({
             term: '',
-            description: ''
+            description: '',
         });
     }
 
@@ -47,7 +47,7 @@ class CardCreator extends Component {
                         </div>
                         <div className="col-md-4">
                             <label>Description:</label>
-                            <input type="text" name="author" value={this.state.description}
+                            <input type="text" name="description" value={this.state.description}
                             onChange={this.handleChange} />
                         </div>
                         <div className="col-md-4">

@@ -29,7 +29,7 @@ class App extends Component {
     addNewCard(flashcard){
         this.flashcards.push(flashcard);
         this.setState({
-            cardNumber: this.books.length -1
+            cardNumber: this.flashcards.length -1
         });
     }
     gotoNextCard(){
