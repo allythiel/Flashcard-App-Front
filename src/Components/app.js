@@ -55,8 +55,8 @@ class App extends Component {
         return (
             <div className="container-fluid">
                 <TitleBar />
-                <CardViewer flashcard={this.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
                 <CardCreator addNewCard={this.addNewCard.bind(this)}/>
+                <CardViewer flashcard={this.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
                 <Footer />
             </div>
         );
