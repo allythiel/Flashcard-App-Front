@@ -10,10 +10,8 @@ import './app.css';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.flashcards = [
-            {term: 'Javascript', description: 'A front end software language'},
-        ];
         this.state = {
+            flashcards: [],
             cardNumber: 0
         }
     }
@@ -24,7 +22,7 @@ class App extends Component {
     async getAllCards(){
         let result = await axios.get("http://localhost:5000/api/collections");
         this.setState({
-            flashcardArr: result.data
+            flashcards: result.data
         });
     }
 
@@ -37,7 +35,7 @@ class App extends Component {
     gotoNextCard(){
         let tempCardNumber = this.state.cardNumber;
         tempCardNumber++;
-        if(tempCardNumber === this.flashcards.length){
+        if(tempCardNumber === this.flashcards.length +1){
             tempCardNumber = 0;
         }
         this.setState({
@@ -58,7 +56,7 @@ class App extends Component {
             <div className="container-fluid">
                 <TitleBar />
                 <CardCreator addNewCard={this.addNewCard.bind(this)}/>
-                <CardViewer flashcard={this.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
+                <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
                 <Footer />
             </div>
         );
