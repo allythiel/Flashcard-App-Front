@@ -3,6 +3,7 @@ import TitleBar from './TitleBar/titlebar';
 import Footer from './Footer/footer';
 import CardViewer from './CardViewer/cardViewer';
 import CardCreator from './cardCreator/cardCreator';
+import axios from 'axios';
 import './app.css';
 
 
@@ -16,16 +17,16 @@ class App extends Component {
             cardNumber: 0
         }
     }
-    // componentDidMount(){
-    //     this.getAllCards();
-    // }
+    componentDidMount(){
+        this.getAllCards();
+    }
 
-    // async getAllCards(){
-    //     let result = await assertExpressionStatement.get("http://localhost:5000/api/collections");
-    //     this.setState({
-    //         flashcardArr: result.data
-    //     });
-    // }
+    async getAllCards(){
+        let result = await axios.get("http://localhost:5000/api/collections");
+        this.setState({
+            flashcardArr: result.data
+        });
+    }
 
     addNewCard(flashcard){
         this.flashcards.push(flashcard);
