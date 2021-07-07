@@ -31,13 +31,13 @@ class App extends Component {
     addNewCard(flashcard){
         this.state.flashcards.push(flashcard);
         this.setState({
-            cardNumber: this.state.flashcards.length -1
+            cardNumber: this.flashcards.length -1
         });
     }
     gotoNextCard(){
         let tempCardNumber = this.state.cardNumber;
         tempCardNumber++;
-        if(tempCardNumber === this.state.flashcards.length +1){
+        if(tempCardNumber === this.state.flashcards.length){
             tempCardNumber = 0;
         }
         this.setState({
@@ -58,7 +58,7 @@ class App extends Component {
             <div className="container-fluid">
                 <TitleBar />
                 <CardCreator addNewCard={this.addNewCard.bind(this)}/>
-                {this.state.isLoaded ? <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()} />  : <h1>Loading!!!</h1>}
+                {this.state.isLoaded ? <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.gotoNextCard()} previousCard={() => this.gotoPreviousCard()} />  : <h1>Loading!!!</h1>}
                 <Footer />
             </div>
         );
