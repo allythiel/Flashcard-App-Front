@@ -28,10 +28,10 @@ class App extends Component {
         });
     }
 
-    addNewCard(flashcard){
-        this.state.flashcards.push(flashcard);
+    addNewCard(flashcards){
+        this.state.flashcards.push(flashcards);
         this.setState({
-            cardNumber: this.flashcards.length -1
+            cardNumber: this.state.flashcards.length +1
         });
     }
     gotoNextCard(){

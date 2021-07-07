@@ -13,9 +13,9 @@ function CardViewer(props){
         <div className="col-md-4">
             <button onClick={() => props.nextCard()}>Next Flashcard</button>
         </div>
-        <div className="col-md-4">
+        {/* <div className="col-md-4">
             <button onClick={() => props.flipCard()}>Flip Flashcard</button>
-        </div>
+        </div> */}
     </div>
     )
 }

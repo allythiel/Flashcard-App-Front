@@ -13,19 +13,26 @@
     border-right: solid black;
     border-bottom: solid black;
     border-width: 1 1px;
-    height: 650px;
+    height: 100%;
     width: 100%;
-    border-bottom-left-radius: 15%;
-    border-top-right-radius: 5%;
+    padding-bottom: 1%;
 }
 
-.title {
-    padding: 20%;
-}
-
-.description {
+.term {
+    text-align: center;
+    color:darkblue;
     padding-top: 10%;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 50%;
+    padding-bottom: 20%;
 }
+
+.description{
+    text-align: center;
+    color:darkblue;;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20%;
+}
+

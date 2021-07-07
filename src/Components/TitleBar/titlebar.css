@@ -1,10 +1,12 @@
 .titlebar-nav {
-    background-color: lightblue;
+    background-color: darkcyan;
     width: 100%;
 }
 
 h1 {
     text-align: center;
+    color: white;
+    border-color: black;
     padding-bottom: 0.2em;
     padding-left: 1em;
 }
