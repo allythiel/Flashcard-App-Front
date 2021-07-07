@@ -12,7 +12,8 @@ class App extends Component {
         super(props);
         this.state = {
             flashcards: [],
-            cardNumber: 0
+            cardNumber: 0,
+            isLoaded: false,
         }
     }
     componentDidMount(){
@@ -22,20 +23,21 @@ class App extends Component {
     async getAllCards(){
         let result = await axios.get("http://localhost:5000/api/collections");
         this.setState({
-            flashcards: result.data
+            flashcards: result.data,
+            isLoaded: true
         });
     }
 
     addNewCard(flashcard){
-        this.flashcards.push(flashcard);
+        this.state.flashcards.push(flashcard);
         this.setState({
-            cardNumber: this.flashcards.length -1
+            cardNumber: this.state.flashcards.length -1
         });
     }
     gotoNextCard(){
         let tempCardNumber = this.state.cardNumber;
         tempCardNumber++;
-        if(tempCardNumber === this.flashcards.length +1){
+        if(tempCardNumber === this.state.flashcards.length +1){
             tempCardNumber = 0;
         }
         this.setState({
@@ -46,17 +48,20 @@ class App extends Component {
         let tempCardNumber = this.state.cardNumber;
         tempCardNumber--;
         if(tempCardNumber < 0)
-            tempCardNumber = this.flashcards.length -1;
+            tempCardNumber = this.state.flashcards.length -1;
         this.setState({
             cardNumber: tempCardNumber
         });
     }
     render() {
+        console.log(this.state.flashcards)
         return (
             <div className="container-fluid">
                 <TitleBar />
                 <CardCreator addNewCard={this.addNewCard.bind(this)}/>
-                <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()}/>
+                {this.state.isLoaded ? <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()} />  : <h1>Loading!!!</h1>}
+                
+                
                 <Footer />
             </div>
         );
