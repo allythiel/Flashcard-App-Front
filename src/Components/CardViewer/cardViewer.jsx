@@ -2,7 +2,6 @@ import React from 'react';
 import Flashcard from '../Flashcard/flashcard';
 
 function CardViewer(props){
-    console.log(props)
     return(
         <div className="row row-spacer">
         <div className="col-md-4">

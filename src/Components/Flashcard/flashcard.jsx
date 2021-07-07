@@ -3,7 +3,6 @@ import './flashcard.css';
 import '../app';
 
 const Flashcard = (props) => {
-    console.log(props.flashcard)
     return (
             <div className="flashcard">
                 <div className="card">

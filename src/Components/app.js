@@ -54,14 +54,11 @@ class App extends Component {
         });
     }
     render() {
-        console.log(this.state.flashcards)
         return (
             <div className="container-fluid">
                 <TitleBar />
                 <CardCreator addNewCard={this.addNewCard.bind(this)}/>
                 {this.state.isLoaded ? <CardViewer flashcards={this.state.flashcards[this.state.cardNumber]} nextCard={() => this.goToNextCard()} previousCard={() => this.goToPreviousCard()} />  : <h1>Loading!!!</h1>}
-                
-                
                 <Footer />
             </div>
         );
